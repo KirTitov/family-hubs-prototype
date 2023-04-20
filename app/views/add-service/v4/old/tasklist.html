@@ -1,0 +1,98 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Add details about an organisation
+        </h1>
+      </legend>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Types of support you offer
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" onclick="showAlert();" aria-describedby="eligibility-status">
+                  Select the support you offer
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> More details about the support you offer
+          </h2>
+          <ul class="app-task-list__items">
+            {% if data['status'] !== 'Completed' %}
+            {% for item in data['typesData'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="start-section" aria-describedby="{{item}}-status">
+                  {{item}}
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="{{item}}-status">Not started</strong>
+            </li>
+            {% endfor %}
+            {% else %}
+            {% for item in data['typesData'] %}
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" onclick="showAlert();" aria-describedby="{{item}}-status">
+                  {{item}}
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="{{item}}-status">Completed</strong>
+            </li>
+            {% endfor %}
+            {% endif %}
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Send for review
+          </h2>
+          {% if data['status'] !== 'Completed' %}
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                Submit details and send for review
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-status">Cannot start yet</strong>
+            </li>
+          </ul>
+          {% else %}
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="send-for-review" aria-describedby="submit-status">
+                Submit details and send for review
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-status">Not started</strong>
+            </li>
+          </ul>
+          {% endif %}
+        </li>
+      </ol>
+
+      <form method="post">
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

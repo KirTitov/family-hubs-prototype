@@ -1,0 +1,43 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Do families have to pay for the service?
+        </h1>
+      </legend>
+
+      <form method="post">
+
+      <div class="govuk-form-group">
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pay-service" name="payForService" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="pay-service">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pay-service-2" name="payForService" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="pay-service-2">
+            No
+          </label>
+        </div>
+      </div>
+      </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

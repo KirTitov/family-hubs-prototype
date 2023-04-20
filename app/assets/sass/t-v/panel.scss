@@ -1,0 +1,77 @@
+.js-enabled {
+  .panel-component {
+    margin-top: 0;
+
+    @include govuk-media-query($until: desktop) {
+      margin-top: govuk-spacing(2);
+    }
+
+    &__toggle {
+      display: block;
+      width: 100%;
+
+      @include govuk-media-query($from: desktop) {
+        display: none;
+      }
+    }
+
+    &__content {
+      background-color: govuk-colour('light-grey');
+      overflow: hidden;
+      @include govuk-media-query($until: desktop) {
+        display: none;
+      }
+
+      &:focus {
+        @include govuk-media-query($until: desktop) {
+          outline: $govuk-focus-width solid $govuk-focus-colour;
+        }
+      }
+
+      &--visible {
+        display: block;
+
+        @include govuk-media-query($until: desktop) {
+          border: 1px solid govuk-colour('mid-grey');
+          bottom: 5px;
+          max-width: 320px;
+          overflow-y: scroll;
+          position: fixed;
+          right: 5px;
+          top: 5px;
+          z-index: 5000;
+        }
+      }
+
+      &__close-button {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: 0;
+        cursor: pointer;
+        display: none;
+        font-size: 0.9rem;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        @include govuk-media-query($until: desktop) {
+          display: block;
+        }
+
+        span {
+          padding-left: govuk-spacing(4);
+        }
+      }
+
+      &__heading {
+        display: block;
+        position: relative;
+
+        .govuk-heading-m {
+          display: block;
+        }
+      }
+    }
+  }
+}

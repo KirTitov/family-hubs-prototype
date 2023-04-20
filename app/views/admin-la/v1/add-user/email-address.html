@@ -1,0 +1,48 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What is the user's email address?
+        </h1>
+        <div class="govuk-hint govuk-!-margin-top-2">
+          They will use this to log in to their account.
+        </div>
+  
+      <form method="post" novalidate data-validate='my-form-validation'>
+
+        <div class="govuk-form-group">
+          <!---label class="govuk-label" for="email">Email address--->
+          </label>
+          <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+        </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+        <script type="application/json" id="my-form-validation">
+
+          {
+            "email": {
+              "presence": {
+                "message": "^Enter an email address"
+              }
+            }
+          }
+        </script>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

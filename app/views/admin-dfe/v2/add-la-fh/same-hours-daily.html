@@ -1,0 +1,104 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                   Opening times
+                </h1>
+            </legend>
+            <p>You told us the family hub is open on the following days:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                {% for item in data['opening'] %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            <form method="post" novalidate data-validate="my-form-validation">
+                <span class="govuk-heading-m govuk-!-margin-bottom-2">Are opening times the same on each of those days?</span>
+                <div class="govuk-hint">
+                    For example, always 9am to 5pm.
+                </div>
+                <div class="govuk-form-group">
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="same-hours" name="same-hours" type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="same-hours">
+                                Yes, opening times are the same
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="same-hours-2" name="same-hours" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="same-hours-2">
+                                No, opening times are different
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="govuk-button">
+                    Continue
+                </button>
+            </form>
+            <script type="application/json" id="my-form-validation">
+
+                {
+                    "same-hours": {
+                        "presence": {
+                            "message": "^Select if the opening hours are the same on each day"
+                        }
+                    }
+                }
+            </script>
+        </fieldset>
+    </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+    $(document).ready(function() {
+
+        // Watch for changes to the DOM
+        $(document).on('click', '.govuk-button--secondary', function(){
+            // Get all fieldsets with the class moj-add-another__item
+            var fieldsets = $('.moj-add-another');
+
+            // Loop through each fieldset
+            fieldsets.each(function() {
+                // Get all select elements within the current fieldset
+                var selects = $(this).find('select');
+
+                // Check the number of select elements
+                if (selects.length > 2) {
+                    // Get the div with the class moj-button-action within the current fieldset
+                    var button = $(this).find('.moj-button-action');
+
+                    // Remove the div
+                    button.hide();
+                }
+
+                else {
+                    // Get the div with the class moj-button-action within the current fieldset
+                    var button = $(this).find('.moj-button-action');
+
+                    // Remove the div
+                    button.show();
+                }
+            });
+        });
+
+    });
+
+
+</script>
+{% endblock %}

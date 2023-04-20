@@ -1,0 +1,278 @@
+{% extends "layout_dfe_fh_signedin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+        What support does the service offer?
+        </h1>
+      </legend>
+      <form method="post">
+        <div class="govuk-form-group">
+          <div class="govuk-hint" id="hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="support" name="support" type="checkbox" value="Activities, clubs and groups" data-aria-controls="conditional-checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="support">
+                Activities, clubs and groups
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-checkbox">
+              <div class="govuk-form-group">
+                <label class="govuk-label--s">
+                  Select activities, clubs and groups
+                </label>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-2" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-1" name="category-1" type="checkbox" value="Activities"> <label class="govuk-label govuk-checkboxes__label" for="category-1">Activities</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-1-2" name="category-1" type="checkbox" value="Before and after school clubs"> <label class="govuk-label govuk-checkboxes__label" for="category-1-2">Before and after school clubs</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-1-3" name="category-1" type="checkbox" value="Holiday clubs and schemes"> <label class="govuk-label govuk-checkboxes__label" for="category-1-3">Holiday clubs and schemes</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-1-4" name="category-1" type="checkbox" value="Music, arts and dance"> <label class="govuk-label govuk-checkboxes__label" for="category-1-4">Music, arts and dance</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-1-5" name="category-1" type="checkbox" value="Parent, baby and toddler groups"> <label class="govuk-label govuk-checkboxes__label" for="category-1-5">Parent, baby and toddler groups</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-1-6" name="category-1" type="checkbox" value="Pre-school playgroup"> <label class="govuk-label govuk-checkboxes__label" for="category-1-6">Pre-school playgroup</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-1-7" name="category-1" type="checkbox" value="Sports and recreation"> <label class="govuk-label govuk-checkboxes__label" for="category-1-7">Sports and recreation</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="support-1" name="support" type="checkbox" value="Family support" data-aria-controls="conditional-checkbox-1">
+              <label class="govuk-label govuk-checkboxes__label" for="support-1">
+                Family support
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-checkbox-1">
+              <div class="govuk-form-group">
+                <label class="govuk-label--s">
+                  Select family support
+                </label>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-2" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="Bullying and cyber bullying"> <label class="govuk-label govuk-checkboxes__label" for="category-2-2">Bullying and cyber bullying</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-3" name="category-2" type="checkbox" value="Debt and welfare advice"> <label class="govuk-label govuk-checkboxes__label" for="category-2-3">Debt and welfare advice</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-4" name="category-2" type="checkbox" value="Domestic abuse"> <label class="govuk-label govuk-checkboxes__label" for="category-2-4">Domestic abuse</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-5" name="category-2" type="checkbox" value="Intensive targeted family support"> <label class="govuk-label govuk-checkboxes__label" for="category-2-5">Intensive targeted family support</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-6" name="category-2" type="checkbox" value="Money, benefits and housing"> <label class="govuk-label govuk-checkboxes__label" for="category-2-6">Money, benefits and housing</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="Parenting support"> <label class="govuk-label govuk-checkboxes__label" for="category-2">Parenting support</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-7" name="category-2" type="checkbox" value="Reducing parental conflict"> <label class="govuk-label govuk-checkboxes__label" for="category-2-7">Reducing parental conflict</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-8" name="category-2" type="checkbox" value="Separating and separated parent support"> <label class="govuk-label govuk-checkboxes__label" for="category-2-8">Separating and separated parent support</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-9" name="category-2" type="checkbox" value="Stopping smoking"> <label class="govuk-label govuk-checkboxes__label" for="category-2-9">Stopping smoking</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-10" name="category-2" type="checkbox" value="Substance misuse (including alcohol and drug)"> <label class="govuk-label govuk-checkboxes__label" for="category-2-10">Substance misuse (including alcohol and drug)</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-11" name="category-2" type="checkbox" value="Support with parenting"> <label class="govuk-label govuk-checkboxes__label" for="category-2-11">Support with parenting</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-12" name="category-2" type="checkbox" value="Targeted youth support"> <label class="govuk-label govuk-checkboxes__label" for="category-2-12">Targeted youth support</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-2-13" name="category-2" type="checkbox" value="Youth justice services"> <label class="govuk-label govuk-checkboxes__label" for="category-2-13">Youth justice services</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="support-2" name="support" type="checkbox" value="Health" data-aria-controls="conditional-checkbox-2">
+              <label class="govuk-label govuk-checkboxes__label" for="support-2">
+                Health
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-checkbox-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label--s">
+                  Select health support
+                </label>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-2" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-3" name="category-3" type="checkbox" value="Hearing and sight"> <label class="govuk-label govuk-checkboxes__label" for="category-3">Hearing and sight</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-3-5" name="category-3" type="checkbox" value="Mental health, social and emotional support"> <label class="govuk-label govuk-checkboxes__label" for="category-3-5">Mental health, social and emotional support</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-3-2" name="category-3" type="checkbox" value="Nutrition and weight management"> <label class="govuk-label govuk-checkboxes__label" for="category-3-2">Nutrition and weight management</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-3-3" name="category-3" type="checkbox" value="Oral health"> <label class="govuk-label govuk-checkboxes__label" for="category-3-3">Oral health</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-3-4" name="category-3" type="checkbox" value="Public health services"> <label class="govuk-label govuk-checkboxes__label" for="category-3-4">Public health services</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="support-3" name="support" type="checkbox" value="Pregnancy, birth and early years" data-aria-controls="conditional-checkbox-3">
+              <label class="govuk-label govuk-checkboxes__label" for="support-3">
+                Pregnancy, birth and early years
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-checkbox-3">
+              <div class="govuk-form-group">
+                <label class="govuk-label--s">
+                  Select pregnancy, birth and early years support
+                </label>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-2" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-4-2" name="category-4" type="checkbox" value="Birth registration"> <label class="govuk-label govuk-checkboxes__label" for="category-4-2">Birth registration</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-4" name="category-4" type="checkbox" value="Early years language and learning"> <label class="govuk-label govuk-checkboxes__label" for="category-4">Early years language and learning</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-4-6" name="category-4" type="checkbox" value="Health visiting"> <label class="govuk-label govuk-checkboxes__label" for="category-4-6">Health visiting</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-4-3" name="category-4" type="checkbox" value="Infant feeding support (including breastfeeding)"> <label class="govuk-label govuk-checkboxes__label" for="category-4-3">Infant feeding support (including breastfeeding)</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-4-4" name="category-4" type="checkbox" value="Midwife and maternity"> <label class="govuk-label govuk-checkboxes__label" for="category-4-4">Midwife and maternity</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-4-5" name="category-4" type="checkbox" value="Perinatal mental health support (pregnancy to one year post birth)"> <label class="govuk-label govuk-checkboxes__label" for="category-4-5">Perinatal mental health support (pregnancy to one year post birth)</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="support-4" name="support" type="checkbox" value="Special educational needs and disabilities (SEND) support" data-aria-controls="conditional-checkbox-4">
+              <label class="govuk-label govuk-checkboxes__label" for="support-4">
+                Special educational needs and disabilities (SEND)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-checkbox-4">
+              <div class="govuk-form-group">
+                <label class="govuk-label--s">
+                  Select SEND support
+                </label>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-2" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-6" name="category-5" type="checkbox" value="Autistic Spectrum Disorder (ASD)"> <label class="govuk-label govuk-checkboxes__label" for="category-5-6">Autistic Spectrum Disorder (ASD)</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-7" name="category-5" type="checkbox" value="Breaks and respite"> <label class="govuk-label govuk-checkboxes__label" for="category-5-7">Breaks and respite</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5" name="category-5" type="checkbox" value="Early years support"> <label class="govuk-label govuk-checkboxes__label" for="category-5">Early years support</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-2" name="category-5" type="checkbox" value="Groups for parents and carers of children with SEND"> <label class="govuk-label govuk-checkboxes__label" for="category-5-2">Groups for parents and carers of children with SEND</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-3" name="category-5" type="checkbox" value="Hearing impairment"> <label class="govuk-label govuk-checkboxes__label" for="category-5-3">Hearing impairment</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-8" name="category-5" type="checkbox" value="Learning difficulties and disabilities"> <label class="govuk-label govuk-checkboxes__label" for="category-5-8">Learning difficulties and disabilities</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-4" name="category-5" type="checkbox" value="Multi-sensory impairment"> <label class="govuk-label govuk-checkboxes__label" for="category-5-4">Multi-sensory impairment</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-12" name="category-5" type="checkbox" value="Other difficulties or disabilities"> <label class="govuk-label govuk-checkboxes__label" for="category-5-12">Other difficulties or disabilities</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-5" name="category-5" type="checkbox" value="Physical disabilities"> <label class="govuk-label govuk-checkboxes__label" for="category-5-5">Physical disabilities</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-9" name="category-5" type="checkbox" value="Social, emotional and mental health support"> <label class="govuk-label govuk-checkboxes__label" for="category-5-9">Social, emotional and mental health support</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-10" name="category-5" type="checkbox" value="Speech, language and communication needs"> <label class="govuk-label govuk-checkboxes__label" for="category-5-10">Speech, language and communication needs</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-5-11" name="category-5" type="checkbox" value="Visual impairment"> <label class="govuk-label govuk-checkboxes__label" for="category-5-11">Visual impairment</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="support-5" name="support" type="checkbox" value="Transport" data-aria-controls="conditional-checkbox-5">
+              <label class="govuk-label govuk-checkboxes__label" for="support-5">
+                Transport
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-checkbox-5">
+              <div class="govuk-form-group">
+                <label class="govuk-label--s">
+                  Select transport support
+                </label>
+                <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-margin-top-2" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="category-6" name="category-6" type="checkbox" value="Community transport"> <label class="govuk-label govuk-checkboxes__label" for="category-6">Community transport</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function dontPickThis()
+  {
+    // document.getElementsByName('category-no').checked = false;
+    // alert("You can't select this option as part of this prototype - sorry!");
+    var checkboxes = document.getElementsByName('category-no');
+    for(var a=0;a<checkboxes.length;a++) {
+      checkboxes[a].checked = false;
+    }
+    alert("You can't select this option as part of this prototype - sorry!");
+  }
+</script>
+{% endblock %}

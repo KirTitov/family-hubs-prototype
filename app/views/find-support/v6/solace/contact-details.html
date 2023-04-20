@@ -1,0 +1,136 @@
+{% extends "layout_dfe_fh_prof.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      How can the service contact
+      {% if data['full-name'] %}
+      {{data['full-name']}}?
+      {% else %}
+      XXX?
+      {% endif %}
+    </h1>
+    <form method="post" novalidate data-validate='my-form-validation'>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-form-group">
+            <div id="contact-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-checkboxes__label" for="contact">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Email address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="email" type="email" spellcheck="false" autocomplete="email">
+                </div>
+
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                  Telephone
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-phone">
+                    Telephone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="telephone-number" type="tel" autocomplete="tel">
+                </div>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+                  Text message
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-text">
+                    Telephone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="text-telephone" type="tel" autocomplete="tel">
+                </div>
+              </div>
+<!--              <div class="govuk-checkboxes__item">-->
+<!--                <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-4">-->
+<!--                <label class="govuk-label govuk-checkboxes__label" for="contact-4">-->
+<!--                  Other-->
+<!--                </label>-->
+<!--              </div>-->
+<!--              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional&#45;&#45;hidden" id="conditional-contact-4">-->
+<!--                <div class="govuk-form-group">-->
+<!--                  <label class="govuk-label" for="other-contact">-->
+<!--                    Give details-->
+<!--                  </label>-->
+<!--                  <textarea class="govuk-textarea" id="other-contact" name="other-contact"></textarea>-->
+<!--                </div>-->
+<!--              </div>-->
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    <script type="application/json" id="my-form-validation">
+
+      {
+        "contact": {
+          "presence": {
+          "message": "^Select a contact method"
+          }
+        }
+      }
+    </script>
+  </div>
+
+
+</div>
+{% endblock %}
+
+//        "contact-by-email": {
+//          "conditionallyRequired": {
+//            "dependentOn": {
+//              "name": "contact",
+//              "value": "email"
+//            },
+//            "message": "^Enter an email address"
+//          }
+//        },
+//        "contact-by-phone": {
+//          "conditionallyRequired": {
+//            "dependentOn": {
+//              "name": "contact",
+//              "value": "phone"
+//            },
+//            "message": "^Enter a telephone number"
+//          }
+//        },
+//        "contact-by-text": {
+//          "conditionallyRequired": {
+//            "dependentOn": {
+//              "name": "contact",
+//              "value": "text"
+//            },
+//            "message": "^Enter a telephone number"
+//          }
+//        }

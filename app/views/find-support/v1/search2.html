@@ -1,0 +1,72 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Find support from local services</h1>
+    <form method="post">
+      <div class="govuk-form-group" id="search-options">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="query">Name of service or provider</label>
+              <input class="govuk-input" id="query" name="searchName" type="text">
+            </div>
+            <div class="govuk-form-group ">
+              <label class="govuk-label" for="postcode">Postcode</label>
+              <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" autocomplete="postal-code">
+            </div>
+            <div class="govuk-form-group ">
+              <fieldset class="govuk-fieldset">
+                <label class="govuk-label" for="service">Type of service</label>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <input type="hidden" id="service" name="typeOfService[]" value="" autocomplete="off">
+                  <div class="govuk-checkboxes__item">
+                    <input id="job-roles-babyclass-field"
+                           class="govuk-checkboxes__input" type="checkbox"
+                           value="babyclass" name="typeOfService[]">
+                    <label for="job-roles-babyclass-field" class="govuk-label govuk-checkboxes__label">Baby classes</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input id="job-roles-helpwithteenagers-field"
+                           class="govuk-checkboxes__input" type="checkbox"
+                           value="helpwithteenagers" name="typeOfService[]">
+                    <label for="job-roles-helpwithteenagers-field" class="govuk-label govuk-checkboxes__label">Help with teenagers</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input id="job-roles-mentalhealth-field"
+                           class="govuk-checkboxes__input" type="checkbox"
+                           value="mentalhealth" name="typeOfService[]">
+                    <label for="job-roles-mentalhealth-field" class="govuk-label govuk-checkboxes__label">Mental health and well-being advice</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input id="job-roles-adoptive-field"
+                           class="govuk-checkboxes__input" type="checkbox"
+                           value="adoptive" name="typeOfService[]">
+                    <label for="job-roles-adoptive-field" class="govuk-label govuk-checkboxes__label">Support for adoptive families</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input id="job-roles-toddlers-field"
+                           class="govuk-checkboxes__input" type="checkbox"
+                           value="toddlers" name="typeOfService[]">
+                    <label for="job-roles-toddlers-field" class="govuk-label govuk-checkboxes__label">Toddler groups</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input id="job-roles-welfare-field"
+                           class="govuk-checkboxes__input" type="checkbox"
+                           value="welfare" name="typeOfService[]">
+                    <label for="job-roles-welfare-field" class="govuk-label govuk-checkboxes__label">Welfare and benefits groups</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+      </div>
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+
+
+</div>
+{% endblock %}

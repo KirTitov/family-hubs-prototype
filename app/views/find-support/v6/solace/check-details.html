@@ -1,0 +1,142 @@
+{% extends "layout_dfe_fh_prof.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Check the details you entered
+        </h1>
+      </legend>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="replace-commas">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is anyone in the family in danger or being harmed?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do you have consent from the family?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of contact
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['full-name']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact details
+          </dt>
+          <dd class="govuk-summary-list__value" id="test">
+            {% if data['email'] %}
+            {{ data['email'] }}
+            <br>
+            {% endif %}
+            {% if data['telephone-number'] %}
+            {{data['telephone-number']}}
+            <br>
+            {% endif %}
+            {% if data['text-telephone'] %}
+            {{data['text-telephone']}}
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden">type</span>
+            </a>
+          </dd>
+        </div>
+<!--        {% if data['telephone-number'] %}-->
+<!--        <div class="govuk-summary-list__row">-->
+<!--          <dt class="govuk-summary-list__key">-->
+<!--            Telephone number-->
+<!--          </dt>-->
+<!--          <dd class="govuk-summary-list__value">-->
+<!--              {{data['telephone-number']}}-->
+<!--          </dd>-->
+<!--          <dd class="govuk-summary-list__actions">-->
+<!--            <a class="govuk-link" href="#" onclick="showAlert();">-->
+<!--              Change<span class="govuk-visually-hidden">type</span>-->
+<!--            </a>-->
+<!--          </dd>-->
+<!--        </div>-->
+<!--        {% endif %}-->
+<!--        {% if data['text-telephone'] %}-->
+<!--        <div class="govuk-summary-list__row">-->
+<!--          <dt class="govuk-summary-list__key">-->
+<!--            Text message-->
+<!--          </dt>-->
+<!--          <dd class="govuk-summary-list__value">-->
+<!--              {{data['text-telephone']}}-->
+<!--          </dd>-->
+<!--          <dd class="govuk-summary-list__actions">-->
+<!--            <a class="govuk-link" href="#" onclick="showAlert();">-->
+<!--              Change<span class="govuk-visually-hidden">type</span>-->
+<!--            </a>-->
+<!--          </dd>-->
+<!--        </div>-->
+<!--        {% endif %}-->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Details about the family
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['with-hint']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> type</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+    <form method="post">
+
+      <button class="govuk-button">
+        Confirm details
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}

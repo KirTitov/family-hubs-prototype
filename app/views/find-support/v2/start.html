@@ -1,0 +1,34 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Connect children and families to local services, groups and support</h1>
+
+    <p>This service is for professionals working with children, young people and families in England.</p>
+    <p>You can find and request support from local organisations, community groups and charities.</p>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Do not use this service if you believe the child is being harmed or is in immediate danger. Call the police on 999 instead.
+      </strong>
+    </div>
+    <div class="govuk-inset-text">
+      You need consent to request support. If the person is under 19, you need consent from a parent or carer.
+    </div>
+    <form method="post">
+      <button class="govuk-button govuk-button--start">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </button>
+    </form>
+  </div>
+
+
+</div>
+{% endblock %}

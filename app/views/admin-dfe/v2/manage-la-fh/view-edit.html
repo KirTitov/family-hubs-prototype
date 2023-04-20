@@ -1,0 +1,127 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Central Bristol Children's Centre</h1>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Central Bristol Children's Centre
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> service name</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Little Bishop St
+                  <br>
+                  St Paul's
+                  <br>
+                  Bristol
+                  <br>
+                  BS2 9JF
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> address</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Opening days
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Monday, Tuesday, Wednesday, Thursday, Friday
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="">
+                      Change<span class="govuk-visually-hidden"> Opening</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Opening times the same each day
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="">
+                      Change<span class="govuk-visually-hidden"> Opening</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Opening times
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Monday: 8:00am to 5:30pm
+                  <br><br>
+                  Tuesday: 8:00am to 5:30pm
+                  <br><br>
+                  Wednesday: 8:00am to 5:30pm
+                  <br><br>
+                  Thursday: 8:00am to 5:30pm
+                  <br><br>
+                  Friday: 8:00am to 4:00pm
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="">
+                      Change<span class="govuk-visually-hidden"> Opening</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Contact details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  0117 903 0337
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">Central Bristol Children’s Centres’ Family Support Team is made up of a group of committed, skilled, approachable, professional and passionate practitioners who can offer targeted, specific 1:1 family support and signposting.</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> more details</span>
+                  </a>
+              </dd>
+          </div>
+      </dl>
+
+      <form method="post">
+          <button class="govuk-button">Save</button>
+      </form>
+      <p><a href="view-services">Back to manage your family hubs</a></p>
+  </div>
+</div>
+
+{% endblock %}

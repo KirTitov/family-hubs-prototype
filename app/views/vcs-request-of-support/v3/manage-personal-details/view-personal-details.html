@@ -1,0 +1,45 @@
+{% extends "layout_vcs_req_supp_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          Manage your account
+        </h1>
+      </legend>
+      <table class="govuk-table govuk-!-margin-top-2">
+        <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Name</th>
+          <td class="govuk-table__cell">James Smith</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="change-name">Change</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Email address</th>
+          <td class="govuk-table__cell">abc@123.com</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="change-email">Change</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Password</th>
+          <td class="govuk-table__cell">Password changed on 2 December 2022</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="change-password">Change</a></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p>To delete your account, contact your administrator.</p>
+
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Check the details you entered
+        </h1>
+      </legend>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="replace-commas">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name of your {{ data['serviceCategory'] | lower }} service
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['serviceName']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How the service is delivered
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['delivery']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden">type</span>
+            </a>
+          </dd>
+        </div>
+        {% if data['faceToFace'] === true %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address where service is provided face-to-face
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['address-line-1']}}<br>{{data['address-line-2']}}<br>{{data['address-town']}}<br>{{data['address-county']}}<br>{{data['address-postcode']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who the service is for
+          </dt>
+          <dd class="govuk-summary-list__value" id="test">
+              {{ data['age'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden">type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language is the service delivered in
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data['chooseLanguage']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden">type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Do families have to pay for the service?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['payForService']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{data['email']}}</p>
+            <p class="govuk-body">{{data['telephone']}}</p>
+            <p class="govuk-body">{{data['website']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#" onclick="showAlert();">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+    <form method="post">
+
+      <button class="govuk-button">
+        Save and continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+{% endblock %}

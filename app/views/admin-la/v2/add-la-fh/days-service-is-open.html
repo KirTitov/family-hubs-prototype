@@ -1,0 +1,132 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    Opening days
+                </h1>
+            </legend>
+            <br>
+            <p>We need to know which days the family hub is open.</p>
+            <p>You can tell us later if it is only open during certain time periods. For example, the first Monday each month, or during term time.</p>
+            <form method="post" novalidate data-validate="my-form-validation">
+
+                <div class="govuk-form-group">
+                    <span class="govuk-heading-m govuk-!-margin-bottom-3">Which days is the family hub open?</span>
+                    <div id="select-hint" class="govuk-hint govuk-!-margin-bottom-3">
+                        Select all the days it is open.
+                    </div>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="opening" name="opening" type="checkbox" value="Monday">
+                            <label class="govuk-label govuk-checkboxes__label" for="opening">
+                                Monday
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="opening-2" name="opening" type="checkbox" value="Tuesday">
+                            <label class="govuk-label govuk-checkboxes__label" for="opening-2">
+                                Tuesday
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="opening-3" name="opening" type="checkbox" value="Wednesday">
+                            <label class="govuk-label govuk-checkboxes__label" for="opening-3">
+                                Wednesday
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="opening-4" name="opening" type="checkbox" value="Thursday">
+                            <label class="govuk-label govuk-checkboxes__label" for="opening-4">
+                                Thursday
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="opening-5" name="opening" type="checkbox" value="Friday">
+                            <label class="govuk-label govuk-checkboxes__label" for="opening-5">
+                                Friday
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="opening-6" name="opening" type="checkbox" value="Saturday">
+                            <label class="govuk-label govuk-checkboxes__label" for="opening-6">
+                                Saturday
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="opening-7" name="opening" type="checkbox" value="Sunday">
+                            <label class="govuk-label govuk-checkboxes__label" for="opening-7">
+                                Sunday
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="govuk-button">
+                    Continue
+                </button>
+            </form>
+            <script type="application/json" id="my-form-validation">
+
+                {
+                    "opening": {
+                        "presence": {
+                            "message": "^Select which days the service is open"
+                        }
+                    }
+                }
+            </script>
+        </fieldset>
+    </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+    $(document).ready(function() {
+
+        // Watch for changes to the DOM
+        $(document).on('click', '.govuk-button--secondary', function(){
+            // Get all fieldsets with the class moj-add-another__item
+            var fieldsets = $('.moj-add-another');
+
+            // Loop through each fieldset
+            fieldsets.each(function() {
+                // Get all select elements within the current fieldset
+                var selects = $(this).find('select');
+
+                // Check the number of select elements
+                if (selects.length > 2) {
+                    // Get the div with the class moj-button-action within the current fieldset
+                    var button = $(this).find('.moj-button-action');
+
+                    // Remove the div
+                    button.hide();
+                }
+
+                else {
+                    // Get the div with the class moj-button-action within the current fieldset
+                    var button = $(this).find('.moj-button-action');
+
+                    // Remove the div
+                    button.show();
+                }
+            });
+        });
+
+    });
+
+
+</script>
+{% endblock %}

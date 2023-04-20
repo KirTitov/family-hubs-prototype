@@ -1,0 +1,206 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+$govuk-new-link-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import ".tmp/sass/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/contents-list";
+@import "patterns/mainstream-guide";
+@import "patterns/pagination";
+@import "patterns/related-items";
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
+@import "patterns/task-list";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.autocomplete__wrapper * {
+  @include govuk-typography-common();
+}
+
+// Teaching vacancies patterns
+
+@import "t-v/filters";
+@import "t-v/searchable_collection";
+@import "t-v/vacancies";
+@import "t-v/panel";
+
+// apprenticeships patterns
+@import "patterns/cards";
+
+.dtmargins {
+  margin-top: 0!important;
+  margin-bottom: 5px!important;
+}
+
+.signOutLink {
+  float: right
+}
+
+.moj-add-another__remove-button {
+  position: inherit!important;
+  right: auto!important;
+  top: auto!important;
+  width: auto!important;
+}
+
+$dfe-blue: #003a69;
+$accent: #347ca9;
+
+.dfe-template__body {
+
+  body, p, h1, h2, h3, h4, h5, h6, a, span, div, table, th, td, blockquote, li, tr, fieldset, label, legend, select, button, strong, caption, input {
+    font-family:
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            Oxygen-Sans,
+            Ubuntu,
+            Cantarell,
+            'Helvetica Neue',
+            sans-serif !important;
+  }
+
+  .govuk-header {
+    background-color: $dfe-blue;
+  }
+
+  .govuk-header__container {
+    position: relative;
+    margin-bottom: -10px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: 10px solid $accent;
+  }
+
+  .govuk-header__product-name,
+  .govuk-header__logotype-text,
+  .govuk-header__content {
+    line-height: 2.5rem !important;
+    font-size: 1.2rem;
+  }
+
+  .govuk-header__logotype-crown-fallback-image {
+    height: 45px;
+    width: 45px;
+  }
+
+  .govuk-header__logotype {
+    margin-right: 0;
+  }
+
+  .govuk-header__logo {
+    @include govuk-media-query($from: desktop) {
+      width: 80%;
+    }
+  }
+
+  .govuk-header__logo__full {
+    @include govuk-media-query($from: desktop) {
+      width: 100%;
+    }
+  }
+
+  .govuk-header__content {
+    @include govuk-media-query($from: desktop) {
+      width: 20%;
+      float: right;
+    }
+  }
+
+  .govuk-header__content__full {
+    @include govuk-media-query($from: desktop) {
+      float: right;
+      margin-top: -1.25em
+    }
+  }
+
+  .govuk-header nav {
+    display: block;
+    float: right;
+  }
+
+  .govuk-header__navigation--end {
+    @include govuk-media-query($from: desktop) {
+      padding: 0
+    }
+  }
+  .govuk-header__link--homepage {
+    margin-right: 0;
+  }
+
+  .govuk-header__link.govuk-header__link--homepage {
+    padding-bottom: 5px;
+  }
+  
+}
+
+.custom-main {
+  padding-top: 2em;
+}
+
+// Filters
+
+.moj-sub-navigation {
+  margin-bottom: 20px;
+}
+
+.icon--cross {
+  background-image: url(https://teaching-vacancies.service.gov.uk/assets/svg/icon-cross-f116f3e7b80d347ea842f354bace21756523f801.svg);
+  background-repeat: no-repeat;
+  }
+
+.filters-component__remove-tags__tag {
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  border: 1px solid #0b0c0c;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  text-align: left;
+  border-radius: 0;
+  
+}
+
+.filters-component__remove-tags__tag {
+  background-position: 5px center;
+  padding-left: 25px;
+}
+
+.govuk-fieldset.resul-filters,
+.border-bottom {
+    border-bottom: 1px solid #b1b4b6
+}
+
+.moj-filter__options {
+  background-color: #f3f2f1;
+  box-shadow: none;
+}
+
+.moj-filter__content .moj-filter__selected {
+  box-shadow: none;
+  padding-bottom: 1px;
+}
+
+.govuk-checkboxes__label::before,
+.govuk-radios__label::before {
+  background-color: #ffffff;
+}
+
+// Styles for VCS request of support
+.govuk-header__content__full_vcs {
+  padding-top: 8px;
+}
+
+// .govuk-header__logo__manage {
+//   width: 70%;
+// }

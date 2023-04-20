@@ -1,0 +1,35 @@
+{% extends "layout_vcs_req_supp_admin.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Request for support accepted
+      </h1>
+      <div class="govuk-panel__body">
+        Request number:<br><strong>0223</strong>
+      </div>
+    </div>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        You can make contact with the person who requested support for this family to discuss this request further. 
+      </p>
+      <p class="govuk-body">
+        You must contact the family. If you are unable to make contact, you should contact the person who requested support for the family.
+      </p>
+      
+      {{ govukButton({
+        text: "Go to homepage",
+        href: "dashboard-rq-two-accepted"
+      }) }}
+  </div>
+  
+
+
+</div>
+{% endblock %}

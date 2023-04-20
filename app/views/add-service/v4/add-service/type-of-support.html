@@ -1,0 +1,105 @@
+{% extends "layout_fh_signedin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+        What does the service help with? 
+        </h1>
+      </legend>
+      <form method="post">
+        <div class="govuk-form-group">
+          <div id="hint" class="govuk-hint">
+            Select all that apply. 
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="category" name="category" type="checkbox" value="Pregnancy and birth">
+              <label class="govuk-label govuk-checkboxes__label" for="category">
+                Pregnancy and birth
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-2" name="category-no" type="checkbox" value="Learning and development">
+              <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                Learning and development
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-3" name="category-no" type="checkbox" value="Mental health">
+              <label class="govuk-label govuk-checkboxes__label" for="category-3">
+                Mental health
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-4" name="category-no" type="checkbox" value="Activities">
+              <label class="govuk-label govuk-checkboxes__label" for="category-4">
+                Activities and sports
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-5" name="category-no" type="checkbox" value="Childcare">
+              <label class="govuk-label govuk-checkboxes__label" for="category-5">
+                Childcare
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-6" name="category-no" type="checkbox" value="Special education needs and disability support (SEND)">
+              <label class="govuk-label govuk-checkboxes__label" for="category-6">
+                Special education needs and disability (SEND)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-7" name="category-no" type="checkbox" value="Family, parents and carers">
+              <label class="govuk-label govuk-checkboxes__label" for="category-7">
+                Parents, carers and family life  
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-8" name="category-no" type="checkbox" value="Money and jobs">
+              <label class="govuk-label govuk-checkboxes__label" for="category-8">
+                Money and jobs
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-9" name="category-no" type="checkbox" value="Community groups">
+              <label class="govuk-label govuk-checkboxes__label" for="category-9">
+                Community, cultural and faith
+              </label>
+            </div>
+          </div>
+        </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function dontPickThis()
+  {
+    // document.getElementsByName('category-no').checked = false;
+    // alert("You can't select this option as part of this prototype - sorry!");
+    var checkboxes = document.getElementsByName('category-no');
+    for(var a=0;a<checkboxes.length;a++) {
+      checkboxes[a].checked = false;
+    }
+    alert("You can't select this option as part of this prototype - sorry!");
+  }
+</script>
+{% endblock %}

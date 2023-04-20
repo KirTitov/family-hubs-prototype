@@ -1,0 +1,58 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Do you want to delete Ben Smith's account?
+        </h1>
+      </legend>
+      <p class="govuk-hint">This stops them using their account and cannot be undone.</p>
+      <form method="post" novalidate data-validate="my-form-validation">
+
+        <div class="govuk-form-group">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="remove-user" name="removeUser" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="remove-user">
+                Yes, delete the account
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="remove-user-2" name="removeUser" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="remove-user-2">
+                No, keep the account
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <button class="govuk-button">
+        Confirm
+      </button>
+    </form>
+      <script type="application/json" id="my-form-validation">
+
+        {
+          "removeUser": {
+            "presence": {
+              "message": "^Select if you want to delete the account"
+            }
+          }
+        }
+      </script>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

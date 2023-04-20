@@ -1,0 +1,137 @@
+{#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
+{%- set assetPath = '/govuk/assets' -%}
+{%- set bodyClasses = 'dfe-template__body' -%}
+
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
+{% from "govuk/components/back-link/macro.njk"           import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"         import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"              import govukButton %}
+{% from "govuk/components/character-count/macro.njk"     import govukCharacterCount %}
+{% from "govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
+{% from "govuk/components/cookie-banner/macro.njk"       import govukCookieBanner %}
+{% from "govuk/components/date-input/macro.njk"          import govukDateInput %}
+{% from "govuk/components/details/macro.njk"             import govukDetails %}
+{% from "govuk/components/error-message/macro.njk"       import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk"       import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"            import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"         import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"               import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% from "govuk/components/panel/macro.njk"               import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"              import govukRadios %}
+{% from "govuk/components/select/macro.njk"              import govukSelect %}
+{% from "govuk/components/skip-link/macro.njk"           import govukSkipLink %}
+{% from "govuk/components/summary-list/macro.njk"        import govukSummaryList %}
+{% from "govuk/components/table/macro.njk"               import govukTable %}
+{% from "govuk/components/tabs/macro.njk"                import govukTabs %}
+{% from "govuk/components/tag/macro.njk"                 import govukTag %}
+{% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+  Manage
+{% endblock %}
+
+{% block header %}
+<header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container">
+      <div class="govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="https://www.gov.uk/government/organisations/department-for-education" class="govuk-header__link govuk-header__link--homepage">
+            <span class="govuk-header__logotype">
+              <img src="/public/images/crest.png" alt="Department for Education homepage" class="govuk-header__logotype-crown-fallback-image">
+                <span class="govuk-header__logotype-text">
+                  Department for Education
+                </span>
+              </span>
+          </a> 
+          <span class="govuk-header__logotype-text">|</span>
+          <a href="/" class="govuk-header__link govuk-header__link--homepage">
+            <span class="govuk-header__product-name">
+              Connect families to support
+            </span>
+          </a>
+        </div>
+        <div class="govuk-header__content__full_vcs">
+          <nav class="govuk-header__navigation govuk-header__navigation--end" aria-label="Menu">
+            <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide menu" aria-expanded="false">Menu</button>
+            <ul id="navigation" class="govuk-header__navigation-list">
+            {% if not hideNavigation %}
+              <li class="govuk-header__navigation-item">
+                <a class="govuk-header__link" id="my-details" href="/app/views/vcs-request-of-support/manage-personal-details/view-personal-details.html">My account</a>
+              </li>
+              <li class="govuk-header__navigation-item">
+                <a class="govuk-header__link" id="sign-out" href="">Sign out</a>
+              </li>
+            {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+  </div>
+</header>
+
+
+  <div class="govuk-width-container">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="https://qfreeaccountssjc1.az1.qualtrics.com/jfe/form/SV_eKgvRcn8vp4QtTM">feedback</a> will help us to improve it.
+      </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% if useAutoStoreData %}
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "accessibility",
+        text: "Accessibility"
+      },
+      {
+        href: "contact-us",
+        text: "Contact us"
+      },
+      {
+        href: "cookies",
+        text: "Cookies"
+      },
+      {
+        href: "https://qfreeaccountssjc1.az1.qualtrics.com/jfe/form/SV_eKgvRcn8vp4QtTM",
+        text: "Feedback"
+      },
+      {
+        href: "terms-and-conditions",
+        text: "Terms and conditions"
+      }
+    ],
+    visuallyHiddenTitle: "Footer links"
+  }
+}) }}
+{% endblock %}
+{% endif %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% endblock %}

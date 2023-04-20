@@ -1,0 +1,119 @@
+{% extends "layout_fh_signedin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Who is the service for?
+        </h1>
+      </legend>
+
+      <form method="post">
+
+        <div class="govuk-form-group">
+          <div id="age-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="age" name="age" type="checkbox" value="Parents">
+              <label class="govuk-label govuk-checkboxes__label" for="age">
+                Parents
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="age-2" name="age" type="checkbox" value="Carers">
+              <label class="govuk-label govuk-checkboxes__label" for="age-2">
+                Carers
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="age-3" name="age" type="checkbox" value="Guardians">
+              <label class="govuk-label govuk-checkboxes__label" for="age-3">
+                Guardians
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="age-4" name="age" type="checkbox" value="Children and young people" aria-controls="age-range">
+              <label class="govuk-label govuk-checkboxes__label" for="age-4">
+                Children and young people
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="age-range">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="age-range-from">
+                  From
+                </label>
+                <select class="govuk-select" id="age-range-from" name="age-range-from">
+                  <option value="0 to 12 months">0 to 12 months</option>
+                  <option value="1 year old">1 year old</option>
+                  <option value="2 year old">2 year old</option>
+                  <option value="3 year old">3 year old</option>
+                  <option value="4 year old">4 year old</option>
+                  <option value="5 year old">5 year old</option>
+                  <option value="6 year old">6 year old</option>
+                  <option value="7 year old">7 year old</option>
+                  <option value="8 year old">8 year old</option>
+                  <option value="9 year old">9 year old</option>
+                  <option value="10 year old">10 year old</option>
+                  <option value="11 year old">11 year old</option>
+                  <option value="12 year old">12 year old</option>
+                  <option value="13 year old">13 year old</option>
+                  <option value="14 year old">14 year old</option>
+                  <option value="15 year old">15 year old</option>
+                  <option value="16 year old">16 year old</option>
+                  <option value="17 year old">17 year old</option>
+                  <option value="18 year old">18 year old</option>
+                  <option value="19 year old">19 year old</option>
+                </select>
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="age-range-to">
+                  To
+                </label>
+                <select class="govuk-select" id="age-range-to" name="age-range-to">
+                  <option value="0 to 12 months">0 to 12 months</option>
+                  <option value="1 year old">1 year old</option>
+                  <option value="2 year old">2 year old</option>
+                  <option value="3 year old">3 year old</option>
+                  <option value="4 year old">4 year old</option>
+                  <option value="5 year old">5 year old</option>
+                  <option value="6 year old">6 year old</option>
+                  <option value="7 year old">7 year old</option>
+                  <option value="8 year old">8 year old</option>
+                  <option value="9 year old">9 year old</option>
+                  <option value="10 year old">10 year old</option>
+                  <option value="11 year old">11 year old</option>
+                  <option value="12 year old">12 year old</option>
+                  <option value="13 year old">13 year old</option>
+                  <option value="14 year old">14 year old</option>
+                  <option value="15 year old">15 year old</option>
+                  <option value="16 year old">16 year old</option>
+                  <option value="17 year old">17 year old</option>
+                  <option value="18 year old">18 year old</option>
+                  <option value="19 year old">19 year old</option>
+                </select>
+              </div>
+
+          </div>
+        </div>
+        </div>
+
+        <button class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

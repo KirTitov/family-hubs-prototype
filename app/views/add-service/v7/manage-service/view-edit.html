@@ -1,0 +1,160 @@
+{% extends "layout_dfe_fh_signedin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl"> Bouncer Parent And Toddler Group</h1>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Bouncer Parent And Toddler Group
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> service name</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  What does it help with?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Childcare
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> what does it help with?</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  What childcare support?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Parent and toddler groups
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> what childcare support?</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  How can families use it?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  In person
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> how can families use it?</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  The Good Shepherd Mission
+                  <br>
+                  17 Three Colts Lane
+                  <br>
+                  London
+                  <br>
+                  E2 6JL
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> address</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  For children and young people?
+              </dt>
+              <dd class="govuk-summary-list__value" id="test">
+                  Yes - 0 to 12 months to 4 years old
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> for children and young people?</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Languages
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  English
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> languages?</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Paid for?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  Yes - £2 per day
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> paid for?</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Contact details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  info@goodshepherdmission.org.uk<br>
+                  020 7739 3822<br>
+                  http://www.goodshepherdmission.org.uk
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> contact details</span>
+                  </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">'Bouncers' Parents and Toddler Group aimed at parents/carers in Bethnal Green. A range of play resources, refreshments and a singing and story time.</p>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#" onclick="showAlert();">
+                      Change<span class="govuk-visually-hidden"> more details</span>
+                  </a>
+              </dd>
+          </div>
+      </dl>
+
+      <form method="post">
+          <button class="govuk-button">Save</button>
+      </form>
+      <p><a href="view-services">Back to manage your services</a></p>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout_dfe_fh_prof.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Consent
+      </h1>
+      <form method="post" novalidate data-validate='my-form-validation'>
+          <p>You must have consent from the family to give their details to the service.</p>
+          <p class="govuk-body">Those details include:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>who to contact in the family</li>
+              <li>ways to contact the family</li>
+              <li>why the family needs help </li>
+            </ul>
+            <p>You can come back and connect the family to the service once you have consent.</p>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <h2 class="govuk-heading-m">
+            Do you have consent from the family?
+          </h2>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="consent" name="consent" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="consent">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="consent-2" name="consent" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="consent-2">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+      <script type="application/json" id="my-form-validation">
+
+          {
+              "consent": {
+                  "presence": {
+                      "message": "^Select whether you have consent "
+                  }
+              }
+          }
+      </script>
+  </div>
+
+
+</div>
+{% endblock %}

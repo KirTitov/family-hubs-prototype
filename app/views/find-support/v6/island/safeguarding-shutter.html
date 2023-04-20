@@ -1,0 +1,33 @@
+{% extends "layout_dfe_fh_prof.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+ 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              You cannot use this service
+            </h1>
+          </legend>
+          <p><a href="https://www.police.uk/">Contact the police</a> if you think someone is in danger or is being harmed.</p>
+          <p>Call 999 if you are reporting a crime that is in progress or if someone is in immediate danger.</p>
+          <p>Contact the local police if you think a crime has been committed or 
+              contact <a href="https://www.gov.uk/find-local-council">the local council</a> if you think someone is at risk or is being abused.</p>
+        </fieldset>
+      <p><a href="../sign-in">
+        Sign out
+      </a></p>
+    </form>
+  </div>
+
+
+</div>
+{% endblock %}

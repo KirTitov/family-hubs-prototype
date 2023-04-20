@@ -1,0 +1,63 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-margin-bottom-4">
+                <h1 class="govuk-fieldset__heading">
+                    Deleting an organisation
+                </h1>
+            </legend>
+            <p>When you delete an organisation, you also delete:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>all the user accounts it created</li>
+                <li>any services it added to the directory</li>
+            </ul>
+            <form method="post" novalidate data-validate="my-form-validation">
+
+                <div class="govuk-form-group">
+                    <h2 class="govuk-heading-m govuk-!-margin-top-6">Do you want to delete Home-Start?</h2>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="remove-org" name="removeOrg" type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="remove-org">
+                                Yes, I want to delete it
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="remove-org-2" name="removeOrg" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="remove-org-2">
+                                No, I want to keep it
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button class="govuk-button">
+                    Confirm
+                </button>
+            </form>
+            <script type="application/json" id="my-form-validation">
+
+                {
+                    "removeOrg": {
+                        "presence": {
+                            "message": "^Select if you want to delete the organisation"
+                        }
+                    }
+                }
+            </script>
+        </fieldset>
+    </div>
+
+
+</div>
+{% endblock %}

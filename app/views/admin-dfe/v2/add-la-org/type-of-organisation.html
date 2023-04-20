@@ -1,0 +1,59 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What do you want to add?
+        </h1>
+      </legend>
+      <form method="post" novalidate data-validate='my-form-validation'>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="orgType" name="orgType" type="radio" value="Local authority">
+                <label class="govuk-label govuk-radios__label" for="orgType">
+                  Local authority
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="orgType-1" name="orgType" type="radio" value="Voluntary and community sector">
+                <label class="govuk-label govuk-radios__label" for="orgType-1">
+                  Voluntary community organisation
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+      <script type="application/json" id="my-form-validation">
+
+        {
+          "orgType": {
+            "presence": {
+              "message": "^Select what you want to add"
+            }
+          }
+        }
+      </script>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

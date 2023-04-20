@@ -1,0 +1,264 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Family Hubs - Information sharing prototype
+{% endblock %}
+
+{% block content %}
+      <h1 class="govuk-heading-xl">
+        Information sharing team prototype
+      </h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-4">Connect families to support (for professionals)</h2>
+
+      <p class="govuk-body-lead"><a class="govuk-link" href="find-support/v6/index">Version 6</a></p>
+      <p class="govuk-tag govuk-tag--blue">
+        Design in progress
+      </p>
+      <p>Connect family to service journey added back to the details page.
+      </p>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Archived prototypes
+        </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body-lead"><a class="govuk-link" href="find-support/v5/index">Version 5</a></p>
+            <p class="govuk-tag govuk-tag--green">
+              Design done
+            </p>
+            <p>WIP: removed 'families can choose location'. Refer journey needs to be removed.</p>
+
+
+            <p class="govuk-body-lead"><a class="govuk-link" href="find-support/v4/index">Version 4</a></p>
+            <p class="govuk-tag govuk-tag--green">
+              Design done
+            </p>
+            <p>Refer journey added - awaiting content decisions for safeguarding and consent questions. New version needed which removes refer journey.</p>
+
+            <p class="govuk-body-lead"><a class="govuk-link" href="find-support/v3/index">Version 3</a></p>
+            <p class="govuk-tag govuk-tag--green">
+              Design done
+            </p>
+            <p>Created MVP journey for search and filtering services, and service information page</p>
+
+            <p class="govuk-body-lead"><a class="govuk-link" href="find-support/v2/index">Version 2</a></p>
+            <p class="govuk-tag govuk-tag--green">
+              Design done
+            </p>
+            <p>Work in progress: to add check your answers page, iterate age to dropdowns, shutter pages for safeguarding & consent questions, iterate type of support. Paused as of beginning of August due to change of focus to CMS prototype.</p>
+
+            <p class="govuk-body-lead"><a class="govuk-link" href="find-support/v1/index">Version 1</a></p>
+            <p class="govuk-tag govuk-tag--green">
+              Design done
+            </p>
+            <p>Added basic screens so far with a search pattern and result pattern, with filters pane.</p>
+            <p>Static journey allows for selecting first result in the list and seeing more information.</p>
+            <p>Information needs to be refined as to what information will be available, and to test what information is of highest priority.</p>
+            <p>Basic static referral journey exists - updates to be made to add shutter error pages for safeguarding and consent answered as no.</p>
+            <p>Check your answers page to be added also.</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a class="govuk-link" href="find-support/v1/search2">Alternative search pattern</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+<!--      <h2 class="govuk-heading-l govuk-!-margin-top-4">Add and manage VCS services (for VCSs)</h2>-->
+
+<!--      <p class="govuk-body-lead"><a class="govuk-link" href="add-service/v7/index">Version 7</a></p>-->
+
+<!--      <p class="govuk-tag govuk-tag&#45;&#45;blue">-->
+<!--        Design in progress-->
+<!--      </p>-->
+<!--      <p>WIP: removed families can choose location.</p>-->
+
+<!--      <p class="govuk-body-lead"><a class="govuk-link" href="add-service/v6/index">Version 6</a></p>-->
+
+<!--      <p class="govuk-tag govuk-tag&#45;&#45;green">-->
+<!--        Design done-->
+<!--      </p>-->
+<!--      <p>Updated categories pattern for adding service.</p>-->
+
+<!--      <p class="govuk-body-lead"><a class="govuk-link" href="add-service/v5/index">Version 5</a></p>-->
+
+<!--      <p class="govuk-tag govuk-tag&#45;&#45;green">-->
+<!--        Design done-->
+<!--      </p>-->
+<!--      <p>Added a 'manage your services' journey which lets user view, change and delete a service.</p>-->
+<!--      <p>Start page will be updated at a later date to include manage service journey.</p>-->
+<!--      <p><span class="govuk-!-font-weight-bold">Important:</span> when a user edits a service as part of the 'manage your service' journey or edits their answers on the 'add a service' journey:</p>-->
+<!--      <ul class="govuk-list govuk-list&#45;&#45;bullet">-->
+<!--        <li>when a new category is added, the user must see the subsequent subcategory question page before returning to the answers page</li>-->
+<!--        <li>when an existing category is removed, the subcategory saved for the category must be removed from the answers page</li>-->
+<!--        <li>when 'in person' is added as a delivery type, the user must see the subsequent pages for 'address' and 'can families choose where the service is delivered' before returning to the answers page</li>-->
+<!--        <li>when 'in person' is removed as a delivery type, the address and 'can families choose where the service is delivered' must be removed from the answers</li>-->
+<!--      </ul>-->
+<!--      <p>There's a <a href="https://lucid.app/lucidspark/e3ae3e29-06a9-411c-b9fb-2efcc5640211/edit?view_items=7tKOGi3aajfm&invitationId=inv_276cfa14-8af1-44d1-a8c4-8b3d514cf6de#" target="_blank">flow diagram on Lucid</a> which visualises the above however it's possibly overly complex.</p>-->
+
+<!--      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">-->
+<!--        <div class="govuk-accordion__section ">-->
+<!--          <div class="govuk-accordion__section-header">-->
+<!--            <h2 class="govuk-accordion__section-heading">-->
+<!--        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">-->
+<!--          Archived prototypes-->
+<!--        </span>-->
+<!--            </h2>-->
+<!--          </div>-->
+<!--          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">-->
+<!--            <p class="govuk-body-lead"><a class="govuk-link" href="add-service/v4/index">Version 4</a></p>-->
+
+<!--            <p class="govuk-tag govuk-tag&#45;&#45;green">-->
+<!--              Design done-->
+<!--            </p>-->
+<!--            <p>Iterated following user research from last round.</p>-->
+<!--            <ul class="govuk-list govuk-list&#45;&#45;bullet">-->
+<!--              <li>More categories added</li>-->
+<!--              <li>Question to collect address now on separate page, with another page to collect whether the service can be delivered elsewhere</li>-->
+<!--              <li>Also iterated who the service is for to collect just age for services for children</li>-->
+<!--              <li>Multiple languages, cost and service description also added</li>-->
+<!--            </ul>-->
+
+<!--            <p class="govuk-body-lead"><a class="govuk-link" href="add-service/v3/index">Version 3</a></p>-->
+
+<!--            <p class="govuk-tag govuk-tag&#45;&#45;green">-->
+<!--              Design done-->
+<!--            </p>-->
+<!--            <p>This version allows for a VCS user to log in and see a home page which allows them to add a service for their organisation. It asks for the service name up front, and then questions around the service. It has a service description box at the end of the journey.</p>-->
+
+<!--            <p class="govuk-body-lead"><a class="govuk-link" href="add-service/v2/index">Version 2</a></p>-->
+
+<!--            <p class="govuk-tag govuk-tag&#45;&#45;green">-->
+<!--              Design done and researched-->
+<!--            </p>-->
+<!--            <p>Updated flow to use a task list pattern to complete each service individually.</p>-->
+
+<!--            <p class="govuk-body-lead"><a class="govuk-link" href="add-service/v1/index">Version 1</a></p>-->
+
+<!--            <p class="govuk-tag govuk-tag&#45;&#45;green">-->
+<!--              Design done-->
+<!--            </p>-->
+<!--            <p>Initial linear flow as taken from inception phase.</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-4">Manage family support services and accounts (for admins)</h2>
+
+      <h3 class="govuk-body-l">Version 2</h3>
+
+      <p class="govuk-body"><a class="govuk-link" href="admin-dfe/v2/index">DfE admin</a></p>
+
+      <p class="govuk-tag govuk-tag--green">
+        Design done
+      </p>
+      <p>Updated DFE journeys to activate a local authority, and add services, family hubs and organisations, as well as accounts.</p>
+
+      <p class="govuk-body"><a class="govuk-link" href="admin-la/v2/index">Local authority admin</a></p>
+
+      <p class="govuk-tag govuk-tag--green">
+        Design done
+      </p>
+      <p>Updated LA journey to add extra questions around opening times and capability to add and manage family hubs.</p>
+
+      <p class="govuk-body"><a class="govuk-link" href="admin-vcs/v2/index">VCS admin</a></p>
+
+      <p class="govuk-tag govuk-tag--green">
+        Design done
+      </p>
+      <p>Updated VCS journey to add extra questions around opening times and removed add users as capability removed.</p>
+
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+      <h3 class="govuk-body-l">Version 1</h3>
+      <p class="govuk-body"><a class="govuk-link" href="admin-dfe/v1/index">Dept for Education admin</a></p>
+      <p class="govuk-body"><a class="govuk-link" href="admin-la/v1/index">Local authority admin</a></p>
+      <p class="govuk-body"><a class="govuk-link" href="admin-vcs/v1/index">VCS admin</a></p>
+
+      <p class="govuk-tag govuk-tag--green">
+        Design done
+      </p>
+      <p>Added journeys for DfE admins, LA admins and VCS admins, to add users and add orgs.
+        Still to do: look at validation messages.</p>
+        
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-4">Manage requests of support (for VCS)</h2>
+
+        <h3 class="govuk-body-l">Version 1</h3>
+        <p class="govuk-body"><a class="govuk-link" href="vcs-request-of-support/intro-page">VCS user gets an email notification.</a></p>
+  
+        <p class="govuk-tag govuk-tag--blue">
+          Design in progress
+        </p>
+        <p>The VCS user will click on an email notification with a new support request.</p>
+  
+    </div>
+    
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Useful links
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <p class="app-related__list-item-description">
+            <a href="error-pages/index">Internal service error messages (500s)</a>
+          </p>
+          <p class="app-related__list-item-description">
+            <a href="https://fh-is-design-history.herokuapp.com/">Design history</a>
+          </p>
+          <p class="app-related__list-item-description">
+            <a href="https://lucid.app/lucidspark/e3ae3e29-06a9-411c-b9fb-2efcc5640211/edit?viewport_loc=14078%2C-2945%2C3301%2C4205%2C0_0&invitationId=inv_276cfa14-8af1-44d1-a8c4-8b3d514cf6de#">Design board - on Lucid</a>
+          <p class="app-related__list-item-description">
+            <a href="https://lucid.app/lucidspark/cd406750-3c7d-4809-ae5b-81df403da6a4/edit?invitationId=inv_a990beac-df1a-489f-94c8-ae53cc58a35d#">Content strategy - on Lucid</a>
+          </p>
+          <p class="app-related__list-item-description">
+            <a href="https://www.figma.com/file/D1UBEEmhxxCH429Gxtk6EU/Directory-and-request-form-(v1)?node-id=3%3A4">Figma file - directory and request form</a>
+          </p>
+          <p class="app-related__list-item-description">
+            <a href="https://www.figma.com/file/2trWaQ7awmwYrfoTAEb7pi/VCS-details-(v1)?node-id=0%3A1">Figma file - VCS organisation entering details for CMS</a>
+          </p>
+        </nav>
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Additional pages
+        </h2>
+        <nav>
+          <p class="app-related__list-item-description">
+            <a href="/find-support/v5/not-found-page" class="govuk-link">Not found page</a>
+          </p>
+          <p>If no results for this postcode show <a href="no-results-for-this-postcode">this page</a></p>
+        </nav>
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Contact us
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <p class="app-related__list-item-description">
+            Tom Bates (content designer) - <a href="https://ukgovernmentdfe.slack.com/archives/D03NR9YAHU7">Slack</a>
+          </p>
+          <p class="app-related__list-item-description">
+            Jas Johal (interaction designer) - <a href="https://ukgovernmentdfe.slack.com/archives/DL8BDL1D1">Slack</a>
+          </p>
+          <p class="app-related__list-item-description">
+            Steven Stamps (service designer) - <a href="https://ukgovernmentdfe.slack.com/archives/D03PV9XS3AL">Slack</a>
+          </p>
+          <p class="app-related__list-item-description">
+          Information sharing team channel - <a href="https://ukgovernmentdfe.slack.com/archives/C03NEGQFV9C">Slack</a>
+          </p>
+        </nav>
+      </aside>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Contact details
+        </h1>
+      </legend>
+
+      <p>These will be shown to families and professionals.</p>
+
+      <form method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone-number">
+          UK telephone number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          Email address
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" spellcheck="false" autocomplete="email">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="website">
+          Website
+        </label>
+        </h1>
+        <div class="govuk-input__wrapper">
+<!--          <div class="govuk-input__prefix" aria-hidden="true">https://</div>-->
+          <input class="govuk-input govuk-input--width-20" id="website" name="website" type="text" spellcheck="false">
+        </div>
+      </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

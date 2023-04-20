@@ -1,0 +1,66 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div data-module="moj-add-another">
+          <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Which language is the service offered in?</h2>
+        <form method="post" novalidate data-validate="my-form-validation">
+            <fieldset class="govuk-fieldset moj-add-another__item">
+              <div class="govuk-form-group">
+                <label for="chooseLanguage" class="govuk-label">Select a language</label>
+                <select class="govuk-select" id="chooseLanguage" name="chooseLanguage">
+                  <option value="" selected disabled>Select language</option>
+                  <option value="Arabic">Arabic</option>
+                  <option value="Bengali">Bengali</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="English">English</option>
+                  <option value="French">French</option>
+                  <option value="German">German</option>
+                  <option value="Gujarati">Gujarati</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Lithuanian">Lithuanian</option>
+                  <option value="Persian/Farsi">Persian/Farsi</option>
+                  <option value="Polish">Polish</option>
+                  <option value="Portuguese">Portuguese</option>
+                  <option value="Punjabi">Punjabi</option>
+                  <option value="Romanian">Romanian</option>
+                  <option value="Russian">Russian</option>
+                  <option value="Somali">Somali</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="Tagalog/Filipino">Tagalog/Filipino</option>
+                  <option value="Tamil">Tamil</option>
+                  <option value="Turkish">Turkish</option>
+                  <option value="Ukrainian">Ukrainian</option>
+                  <option value="Urdu">Urdu</option>
+                </select>
+              </div>
+            </fieldset>
+            <div class="moj-button-action">
+              <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">Add another language</button>
+            </div>
+            <div class="moj-button-action">
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+            </div>
+          </form>
+        <script type="application/json" id="my-form-validation">
+
+          {
+            "chooseLanguage": {
+              "presence": {
+                "message": "^a"
+              }
+            }
+          }
+        </script>
+        </div>
+  </div>
+
+
+</div>
+{% endblock %}

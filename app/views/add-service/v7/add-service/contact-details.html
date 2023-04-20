@@ -1,0 +1,95 @@
+{% extends "layout_dfe_fh_signedin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          How can people contact the service?
+        </h1>
+      </legend>
+
+      <form method="post">
+
+        <div class="govuk-form-group">
+            <div id="contact-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-checkboxes__label" for="contact">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Email address
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="email" type="email" spellcheck="false" autocomplete="email">
+                </div>
+
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                  Telephone
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-phone">
+                    Telephone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="telephone" type="tel" autocomplete="tel">
+                </div>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="website" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+                  Website
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-website">
+                    Website
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-website" name="website" autocomplete="website">
+                </div>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-4">
+                <label class="govuk-label govuk-checkboxes__label" for="contact-4">
+                  Text message
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-4">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-phone">
+                    Telephone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="text-telephone" type="tel" autocomplete="tel">
+                </div>
+              </div>
+            </div>
+        </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

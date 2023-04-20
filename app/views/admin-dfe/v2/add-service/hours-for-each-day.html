@@ -1,0 +1,368 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    What are the opening times?
+                </h1>
+            </legend>
+            <form method="post" novalidate data-validate="my-form-validation">
+                <div class="govuk-form-group">
+                    {% if data['same-hours'] === 'Yes' %}
+                    <label class="govuk-label--s">
+                        Enter opening times
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening times </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="allOpen[0]">Opens</label>
+                                <input class="govuk-input govuk-input--width-4" id="allOpen[0]" name="allOpen[0]" type="text" data-name="allOpen[%index%]" data-id="allOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="allOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="allOpenAmPm[0]" name="allOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="allClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="allClose[0]" name="allClose[0]" type="text" data-name="allClose[%index%]" data-id="allClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="allCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="allCloseAmPm[0]" name="allCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time </button>
+                        </div>
+                    </div>
+                    {% else %}
+                    {% if "Monday" in data['opening'] %}
+                    <label class="govuk-label--s">
+                        Enter opening times for Monday
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening times </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="mondayOpen[0]">Opens</label>
+                                <input class="govuk-input govuk-input--width-4" id="mondayOpen[0]" name="mondayOpen[0]" type="text" data-name="mondayOpen[%index%]" data-id="mondayOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="mondayOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="mondayOpenAmPm[0]" name="mondayOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="mondayClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="mondayClose[0]" name="mondayClose[0]" type="text" data-name="mondayClose[%index%]" data-id="mondayClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="mondayCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="mondayCloseAmPm[0]" name="mondayCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time for this day </button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if "Tuesday" in data['opening'] %}
+                    <label class="govuk-label--s">
+                        Enter opening times for Tuesday
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening hours </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="tuesdayOpen[0]">Open</label>
+                                <input class="govuk-input govuk-input--width-4" id="tuesdayOpen[0]" name="tuesdayOpen[0]" type="text" data-name="tuesdayOpen[%index%]" data-id="tuesdayOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="tuesdayOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="tuesdayOpenAmPm[0]" name="tuesdayOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="tuesdayClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="tuesdayClose[0]" name="tuesdayClose[0]" type="text" data-name="tuesdayClose[%index%]" data-id="tuesdayClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="tuesdayCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="tuesdayCloseAmPm[0]" name="tuesdayCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time for this day </button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if "Wednesday" in data['opening'] %}
+                    <label class="govuk-label--s">
+                        Enter opening times for Wednesday
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening hours </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="wednesdayOpen[0]">Opens</label>
+                                <input class="govuk-input govuk-input--width-4" id="wednesdayOpen[0]" name="wednesdayOpen[0]" type="text" data-name="wednesdayOpen[%index%]" data-id="wednesdayOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="wednesdayOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="wednesdayOpenAmPm[0]" name="wednesdayOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="wednesdayClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="wednesdayClose[0]" name="wednesdayClose[0]" type="text" data-name="wednesdayClose[%index%]" data-id="wednesdayClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="wednesdayCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="wednesdayCloseAmPm[0]" name="wednesdayCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time for this day </button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if "Thursday" in data['opening'] %}
+                    <label class="govuk-label--s">
+                        Enter opening times for Thursday
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening hours </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="thursdayOpen[0]">Opens</label>
+                                <input class="govuk-input govuk-input--width-4" id="thursdayOpen[0]" name="thursdayOpen[0]" type="text" data-name="thursdayOpen[%index%]" data-id="thursdayOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="thursdayOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="thursdayOpenAmPm[0]" name="thursdayOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="thursdayClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="thursdayClose[0]" name="thursdayClose[0]" type="text" data-name="thursdayClose[%index%]" data-id="thursdayClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="thursdayCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="thursdayCloseAmPm[0]" name="thursdayCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time for this day </button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if "Friday" in data['opening'] %}
+                    <label class="govuk-label--s">
+                        Enter opening times for Friday
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening hours </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="fridayOpen[0]">Opens</label>
+                                <input class="govuk-input govuk-input--width-4" id="fridayOpen[0]" name="fridayOpen[0]" type="text" data-name="fridayOpen[%index%]" data-id="fridayOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="fridayOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="fridayOpenAmPm[0]" name="fridayOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="fridayClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="fridayClose[0]" name="fridayClose[0]" type="text" data-name="fridayClose[%index%]" data-id="fridayClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="fridayCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="fridayCloseAmPm[0]" name="fridayCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time for this day </button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if "Saturday" in data['opening'] %}
+                    <label class="govuk-label--s">
+                        Enter opening times for Saturday
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening hours </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="saturdayOpen[0]">Opens</label>
+                                <input class="govuk-input govuk-input--width-4" id="saturdayOpen[0]" name="saturdayOpen[0]" type="text" data-name="saturdayOpen[%index%]" data-id="saturdayOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="saturdayOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="saturdayOpenAmPm[0]" name="saturdayOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="saturdayClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="saturdayClose[0]" name="saturdayClose[0]" type="text" data-name="saturdayClose[%index%]" data-id="saturdayClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="saturdayCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="saturdayCloseAmPm[0]" name="saturdayCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time for this day </button>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if "Sunday" in data['opening'] %}
+                    <label class="govuk-label--s">
+                        Enter opening times for Sunday
+                    </label>
+                    <div class="govuk-hint">For example, 9am or 2:30pm. Enter 12pm for midday.</div>
+                    <div data-module="moj-add-another" class="moj-add-another">
+                        <fieldset class="govuk-fieldset moj-add-another__item">
+                            <legend class="govuk-fieldset__legend moj-add-another__title govuk-visually-hidden"> Opening hours </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="sundayOpen[0]">Opens</label>
+                                <input class="govuk-input govuk-input--width-4" id="sundayOpen[0]" name="sundayOpen[0]" type="text" data-name="sundayOpen[%index%]" data-id="sundayOpen[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="sundayOpenAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="sundayOpenAmPm[0]" name="sundayOpenAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-bottom-4">
+                                <label class="govuk-label" for="sundayClose[0]">Closes</label>
+                                <input class="govuk-input govuk-input--width-4" id="sundayClose[0]" name="sundayClose[0]" type="text" data-name="sundayClose[%index%]" data-id="sundayClose[%index%]">
+                                <label class="govuk-label govuk-visually-hidden" for="sundayCloseAmPm[0]">
+                                    Am or pm
+                                </label>
+                                <select class="govuk-select" id="sundayCloseAmPm[0]" name="sundayCloseAmPm[0]" style="min-width: 2em;">
+                                    <option value="am">am</option>
+                                    <option value="pm">pm</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="moj-button-action">
+                            <button class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button"> Add another time for this day </button>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+
+                </div>
+
+                <button class="govuk-button">
+                    Continue
+                </button>
+            </form>
+            <script type="application/json" id="my-form-validation">
+            </script>
+        </fieldset>
+    </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+    $(document).ready(function() {
+
+        // Watch for changes to the DOM
+        $(document).on('click', '.govuk-button--secondary', function(){
+            // Get all fieldsets with the class moj-add-another__item
+            var fieldsets = $('.moj-add-another');
+
+            // Loop through each fieldset
+            fieldsets.each(function() {
+                // Get all select elements within the current fieldset
+                var selects = $(this).find('select');
+
+                // Check the number of select elements
+                if (selects.length > 2) {
+                    // Get the div with the class moj-button-action within the current fieldset
+                    var button = $(this).find('.moj-button-action');
+
+                    // Remove the div
+                    button.hide();
+                }
+
+                else {
+                    // Get the div with the class moj-button-action within the current fieldset
+                    var button = $(this).find('.moj-button-action');
+
+                    // Remove the div
+                    button.show();
+                }
+            });
+        });
+
+    });
+
+
+</script>
+{% endblock %}

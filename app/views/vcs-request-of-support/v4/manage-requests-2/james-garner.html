@@ -1,0 +1,204 @@
+{% extends "layout_vcs_req_supp_admin.html" %}
+
+{% block beforeContent %}
+<a href="../dashboard.html?supportStatusTwo=Opened" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Request 0223</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Person in family to contact
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    James Garner
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Email
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <a href="mailto:james.garner@redbridge.gov.uk">james.garner@redbridge.gov.uk</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Phone 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <a href="tel:02037891022">0203 789 1022</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Best time to contact
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    2:00 pm to 5:00 pm
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-2">
+    <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Details of the request for support</h2>
+      <p>
+        This new parent has been struggling with their mental 
+        health since the arrival of their baby. They would like 
+        to find out more about the support you have available. 
+      </p>
+      
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-2">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Professional who has made this request</h2>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Alan Scott
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Email
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <a href="mailto:john.smith@redbridge.gov.uk">alan.scott@redbridge.gov.uk</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Phone 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    <a href="tel:02037891022">0203 333 8888</a>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Role 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Family support worker
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Organisation
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    North family hub
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+        </dl>
+
+       
+        <form method="post" action="james-garner" novalidate data-validate='my-form-validation'>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h2 class="govuk-fieldset__heading">
+                        Your response
+                    </h2>
+                </legend>
+                <div id="contact-hint" class="govuk-hint">
+                    Select one option.
+                </div>
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="support-status" name="supportStatusTwo" type="radio" value="Accepted" {{ checked("support-status","Accepted") }}  >
+                        <label class="govuk-label govuk-radios__label" for="accept-request">
+                            Accept - our service will contact this person to offer support
+                        </label>
+                    </div>
+                    
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="support-status" name="supportStatusTwo" type="radio" value="Declined" {{ checked("support-status","Declined") }} data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-radios__label" for="decline-request">
+                            Decline - our service will not offer support
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                        <div class="govuk-form-group">  
+                            {{ govukCharacterCount({
+                                name: "with-hint",
+                                id: "with-hint",
+                                maxlength: 500,
+                                label: {
+                                    text: "Reason for declining",
+                                    classes: "govuk-label--s",
+                                    isPageHeading: false
+                                },
+                                hint: {
+                                    text: "You will no longer have access to this request."
+                                },
+                                id: "event-name",
+                                name: "event-name"
+                            }) }}
+
+                        </div>
+                    </div>
+                </div>
+                </fieldset>
+                <div class="govuk-button-group">
+                    {{ govukButton({
+                        text: "Send response",
+                        classes: "govuk-!-margin-top-2"
+                    }) }}
+                    <a href="../dashboard.html?supportStatusTwo=Opened">Return later</a>
+                </div>
+            </div>
+        </form>
+        <script type="application/json" id="my-form-validation">
+            {
+              "supportStatusTwo": {
+                "presence": {
+                  "message": "^Error message: You must enter a reason for declining."
+                }
+              }
+            }
+        </script>
+    </div>
+</div
+
+{% endblock %}

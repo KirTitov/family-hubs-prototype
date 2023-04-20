@@ -1,0 +1,43 @@
+{% extends "layout_dfe_fh_signedin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Deleting a service</h1>
+      <p>Deleting a service stops it from showing in the directory and getting connections.</p>
+      <p>You cannot get the service back after you delete it. You will not lose existing connections.</p>
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                      Do you want to delete Bouncers Parent And Toddler Group?
+                  </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="remove" name="remove" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="remove">
+                          Yes, I want to delete it 
+                      </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="remove-2" name="remove" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="remove-2">
+                          No, I want to keep it
+                      </label>
+                  </div>
+              </div>
+          </fieldset>
+      </div>
+      <button class="govuk-button">Confirm</button>
+  </div>
+</div>
+</form>
+
+{% endblock %}

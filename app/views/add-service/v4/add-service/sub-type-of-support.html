@@ -1,0 +1,81 @@
+{% extends "layout_fh_signedin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Which pregnancy and birth support does the service offer?
+        </h1>
+      </legend>
+      <form method="post">
+        <div class="govuk-form-group">
+          <div id="hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="category" name="subcategory" type="checkbox" value="Feeding and eating">
+              <label class="govuk-label govuk-checkboxes__label" for="category">
+                Feeding and eating 
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-2" name="subcategory-no" type="checkbox" value="Birth classes">
+              <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                Birth classes
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-3" name="subcategory-no" type="checkbox" value="Antenatal classes">
+              <label class="govuk-label govuk-checkboxes__label" for="category-3">
+                Antenatal classes
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-4" name="subcategory-no" type="checkbox" value="Midwifery">
+              <label class="govuk-label govuk-checkboxes__label" for="category-4">
+                Midwifery
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input onclick="dontPickThis();" class="govuk-checkboxes__input" id="category-5" name="subcategory-no" type="checkbox" value="Toilet training">
+              <label class="govuk-label govuk-checkboxes__label" for="category-5">
+                Toilet training 
+              </label>
+            </div>
+          </div>
+        </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  function dontPickThis()
+  {
+    // document.getElementsByName('category-no').checked = false;
+    // alert("You can't select this option as part of this prototype - sorry!");
+    var checkboxes = document.getElementsByName('subcategory-no');
+    for(var a=0;a<checkboxes.length;a++) {
+      checkboxes[a].checked = false;
+    }
+    alert("You can't select this option as part of this prototype - sorry!");
+  }
+</script>
+{% endblock %}

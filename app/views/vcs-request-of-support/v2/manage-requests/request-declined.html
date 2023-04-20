@@ -1,0 +1,29 @@
+{% extends "layout_vcs_req_supp_admin.html" %}
+{% set mainClasses = "custom-main" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-l">
+        Request for support declined
+      </h1>
+      
+        <p>Request number: <strong>0224</strong></p>
+     
+   
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We have notified the professional who requested support for this family. 
+      </p>
+      {{ govukButton({
+        text: "Go to homepage",
+        href: "dashboard-rq-deleted"
+      }) }}
+  </div>
+
+</div>
+{% endblock %}

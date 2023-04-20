@@ -1,0 +1,44 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Change your name
+        </h1>
+      </legend>
+      <form method="post" novalidate data-validate='my-form-validation'>
+
+        <div class="govuk-form-group"> <label for="new-name" class="govuk-label">Name</label>
+          <input type="text" name="new-name" id="new-name" class="govuk-input govuk-!-width-one-half" autocomplete="new-name" value="James Smith">
+        </div>
+
+        <button class="govuk-button">
+          Save
+        </button>
+      </form>
+      <p><a href="view-personal-details">Cancel</a></p>
+      <script type="application/json" id="my-form-validation">
+
+        {
+          "new-name": {
+            "presence": {
+              "message": "^Enter a name"
+            }
+          }
+        }
+      </script>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

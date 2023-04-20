@@ -1,0 +1,86 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Address 
+        </h1>
+      </legend>
+        <br>
+          <p class="govuk-body">Give the address of the family hub. This helps families find it when they search by location. </p>
+        <form method="post" novalidate data-validate="my-form-validation">
+        <h2 class="govuk-heading-m">What is the address?</h2>
+        <div class="govuk-form-group">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Address line 1
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1" value="{{data['address-line-1']}}">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  Address line 2 (optional)
+                </label>
+                <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2" value="{{data['address-line-2']}}">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2" value="{{data['address-town']}}">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  County (optional)
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text" value="{{data['address-county']}}">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code" value="{{data['address-postcode']}}">
+              </div>
+            </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+        <script type="application/json" id="my-form-validation">
+
+            {
+                "address-line-1": {
+                    "presence": {
+                        "message": "^a"
+                    }
+                },
+                "address-line-2": {
+                    "presence": {
+                        "message": "^b"
+                    }
+                },
+                "address-postcode": {
+                    "presence": {
+                        "message": "^c"
+                    }
+                }
+            }
+        </script>
+    </fieldset>
+  </div>
+</div>
+{% endblock %}

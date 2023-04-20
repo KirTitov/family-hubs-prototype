@@ -1,0 +1,72 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Who is the service for?
+        </h1>
+      </legend>
+
+      <form method="post">
+
+        <div class="govuk-form-group">
+          <div id="age-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="age" name="age" type="checkbox" value="Parents expecting a baby">
+              <label class="govuk-label govuk-checkboxes__label" for="age">
+                Parents expecting a baby
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="age-2" name="age" type="checkbox" value="Parents and carers">
+              <label class="govuk-label govuk-checkboxes__label" for="age-2">
+                Parents and carers
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="age-3" name="age" type="checkbox" value="0 to 12 month olds" aria-controls="age-range">
+              <label class="govuk-label govuk-checkboxes__label" for="age-3">
+                Children and young people
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="age-range">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="age-range-from">
+                  Age range from
+                </label>
+                <div class="govuk-hint">
+                  For example, 3
+                </div>
+                <input class="govuk-input govuk-!-width-one-third" id="age-range-from" name="age-range-from" type="text">
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="age-range-to">
+                  Age range to
+                </label>
+                <div class="govuk-hint">
+                  For example, 9
+                </div>
+                <input class="govuk-input govuk-!-width-one-third" id="age-range-to" name="age-range-to" type="text">
+              </div>
+
+          </div>
+        </div>
+
+        <button class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

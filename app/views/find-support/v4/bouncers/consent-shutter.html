@@ -1,0 +1,32 @@
+{% extends "layout_fh_prof_signedin.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Cannot connect family to service
+            </h1>
+          </legend>
+          <p>You must have consent from the family to give their details to the service.</p>
+          <p class="govuk-body">Those details include:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>who to contact in the family</li>
+              <li>ways to contact the family</li>
+              <li>why the family needs help </li>
+            </ul>
+            <p>You can come back and connect the family to the service when you have consent.</p>
+      <div class="govuk-form-group">
+        </fieldset>
+      <p><a href="../sign-in">
+        Sign out
+      </a></p>
+    </form>
+  </div>
+
+
+</div>
+{% endblock %}

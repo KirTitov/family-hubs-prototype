@@ -1,0 +1,88 @@
+{% extends "layout_fh.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Does the service have the same address as the organisation address?
+        </h1>
+      </legend>
+
+      <div class="govuk-inset-text">
+        <p>The information we have on record is:</p>
+        <p><span class="govuk-!-font-weight-bold">Address: </span><br>
+        15 Friars Road<br>
+          London<br>
+          E1 1AA
+        </p>
+      </div>
+
+      <form method="post">
+
+      <div class="govuk-form-group">
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="service-address" name="sameServiceAddress" type="radio" value="Yes">
+          <label class="govuk-label govuk-radios__label" for="service-address">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="service-address-2" name="sameServiceAddress" type="radio" value="No" aria-controls="conditional-address">
+          <label class="govuk-label govuk-radios__label" for="service-address-2">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__conditional" id="conditional-address">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Address line 1
+            </label>
+            <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+              Address line 2 (optional)
+            </label>
+            <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+              County (optional)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

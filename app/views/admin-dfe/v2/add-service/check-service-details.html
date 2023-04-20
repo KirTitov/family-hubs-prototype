@@ -1,0 +1,290 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Check the service details
+        </h1>
+      </legend>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9" id="replace-commas">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Local authority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['vcsLocalAuthority'] | first }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Voluntary and community organisation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['vcsOrg'] | first }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['serviceName']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Support it offers 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Before and after school clubs
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> What does it help with?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How can families use it?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['deliveryString']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> How can families use it?</span>
+            </a>
+          </dd>
+        </div>
+        {% if data ['inPerson'] === true %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['address-line-1']}}<br>{{data['address-line-2']}}<br>{{data['address-town']}}<br>{{data['address-county']}}<br>{{data['address-postcode']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> Address</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Opening days
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['daysString'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> Opening</span>
+            </a>
+          </dd>
+        </div>
+        {% if "," in data['daysString'] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Opening times the same each day
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['same-hours'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> Opening</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Opening times
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['same-hours'] === "Yes" %}
+            10:00am to 12:00pm and 2:00pm to 5:30pm
+            {% else %}
+            {% if 'Monday' in data['daysString'] %}
+            Monday: 10:00am to 12:00pm and 2:00pm to 5:30pm
+            <br><br>
+            {% endif %}
+            {% if 'Tuesday' in data['daysString'] %}
+            Tuesday: 10:00am to 12:30pm and 2:00pm to 5:30pm
+            <br><br>
+            {% endif %}
+            {% if 'Wednesday' in data['daysString'] %}
+            Wednesday: 09:00am to 12:00pm and 2:00pm to 5:30pm
+            <br><br>
+            {% endif %}
+            {% if 'Thursday' in data['daysString'] %}
+            Thursday: 10:30am to 11:30am and 2:00pm to 5:30pm
+            <br><br>
+            {% endif %}
+            {% if 'Friday' in data['daysString'] %}
+            Friday: 09:00am to 5:00pm
+            <br><br>
+            {% endif %}
+            {% if 'Saturday' in data['daysString'] %}
+            Saturday: 09:00am to 5:00pm
+            <br><br>
+            {% endif %}
+            {% if 'Sunday' in data['daysString'] %}
+            Sunday: 09:00am to 5:00pm
+            {% endif %}
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> Opening</span>
+            </a>
+          </dd>
+        </div>
+        <!--        <div class="govuk-summary-list__row">-->
+<!--          <dt class="govuk-summary-list__key">-->
+<!--            Opening hours-->
+<!--          </dt>-->
+<!--          <dd class="govuk-summary-list__value">-->
+<!--            Monday: 10:00am to 12:00pm and 2:00pm to 5:30pm-->
+<!--            <br>-->
+<!--            Tuesday: 10:00am to 12:30pm and 2:00pm to 5:30pm-->
+<!--            <br>-->
+<!--            Wednesday: 09:00am to 12:00pm-->
+<!--            <br>-->
+<!--            Thursday: 10:30am to 11:30am-->
+<!--            <br>-->
+<!--            Friday: 09:00am to 5:00pm-->
+<!--          </dd>-->
+<!--          <dd class="govuk-summary-list__actions">-->
+<!--            <a class="govuk-link" href="">-->
+<!--              Change<span class="govuk-visually-hidden"> Opening</span>-->
+<!--            </a>-->
+<!--          </dd>-->
+<!--        </div>-->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            For children and young people?
+          </dt>
+          <dd class="govuk-summary-list__value" id="test">
+              {{ data['children'] }} {% if data['childrenAndYoungPeople'] === true %}- {{ data['age-range-from'] }} to {{ data['age-range-to'] }}{% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> For children and young people</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Languages
+          </dt>
+          <dd class="govuk-summary-list__value">
+              {{data['languageString']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden">Languages</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Paid for?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['payForService'] === 'Yes' %}
+            {{data['payForService']}} - £{{data['cost-per-item']}} per {{data['cost-unit'] | lower}}
+            {% else %}
+            {{data['payForService']}}
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden">  Paid for?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{data['email']}}</p>
+            <p class="govuk-body">{{data['telephone']}}</p>
+            <p class="govuk-body">{{data['website']}}</p>
+            <p class="govuk-body">{{data['text-telephone']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> Contact details</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            More details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">{{data['with-hint']}}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="">
+              Change<span class="govuk-visually-hidden"> More details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+    <form method="post">
+
+      <button class="govuk-button">
+        Confirm details
+      </button>
+    </form>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script type="javascript">
+  $(document).ready(function() {
+    $(".govuk-summary-list__value br").each(function() {
+      if (!$(this).next().length) {
+        $(this).remove();
+      }
+    });
+  });
+
+</script>
+{% endblock %}

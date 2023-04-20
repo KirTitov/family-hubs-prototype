@@ -1,0 +1,37 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        {% if data['orgType'] === 'Local authority' %}
+        Local authority
+        {% endif %}
+        {% if data['orgType'] === 'Voluntary and community sector' %}
+        Voluntary community organisation
+        {% endif %}
+        added
+      </h1>
+    </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
+
+    <p class="govuk-body">You can now create user accounts for the
+      {% if data['orgType'] === 'Local authority' %}
+      local authority.
+      {% endif %}
+      {% if data['orgType'] === 'Voluntary and community sector' %}
+      organisation.
+      {% endif %}
+    </p>
+    <p class="govuk-body">You can do this from your homepage.</p>
+    <form method="post">
+      <a href="../homepage" class="govuk-button">Go to homepage</a>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

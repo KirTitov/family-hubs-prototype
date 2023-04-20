@@ -1,0 +1,60 @@
+{% extends "layout_fh_prof_signedin.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Select the type of service you are looking for</h1>
+    <form method="post">
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="types" name="types" type="checkbox" value="Baby classes"> <!--aria-controls="baby-classes-conditional"!-->
+              <label class="govuk-label govuk-checkboxes__label" for="types">
+                Baby classes
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="types-2" name="types" type="checkbox" value="Toddler groups">
+              <label class="govuk-label govuk-checkboxes__label" for="types-2">
+                Toddler groups
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="types-3" name="types" type="checkbox" value="Special education needs and disability support (SEND)">
+              <label class="govuk-label govuk-checkboxes__label" for="types-3">
+                Special education needs and disability support (SEND)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="types-4" name="types" type="checkbox" value="Mental health and wellbeing">
+              <label class="govuk-label govuk-checkboxes__label" for="types-4">
+                Mental health and wellbeing
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="types-5" name="types" type="checkbox" value="Support for adoptive families">
+              <label class="govuk-label govuk-checkboxes__label" for="types-5">
+                Support for adoptive families
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="types-6" name="types" type="checkbox" value="Help with teenagers">
+              <label class="govuk-label govuk-checkboxes__label" for="types-6">
+                Help with teenagers
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "layout_dfe_admin.html" %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          How can families use the service?
+        </h1>
+      </legend>
+
+      <form method="post" novalidate data-validate="my-form-validation">
+
+      <div class="govuk-form-group">
+        <div id="delivery-hint" class="govuk-hint">
+          Select all that apply.
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="delivery-2" name="delivery" type="checkbox" value="In person">
+            <label class="govuk-label govuk-checkboxes__label" for="delivery-2">
+              In person
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="delivery" name="delivery" type="checkbox" value="Online">
+            <label class="govuk-label govuk-checkboxes__label" for="delivery">
+              Online
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="delivery-3" name="delivery" type="checkbox" value="Telephone">
+            <label class="govuk-label govuk-checkboxes__label" for="delivery-3">
+              Telephone
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="govuk-button">
+        Continue
+      </button>
+    </form>
+      <script type="application/json" id="my-form-validation">
+
+        {
+          "delivery": {
+            "presence": {
+              "message": "^"
+            }
+          }
+        }
+      </script>
+    </fieldset>
+  </div>
+
+
+</div>
+{% endblock %}

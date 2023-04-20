@@ -1,0 +1,45 @@
+{% extends "layout_fh_prof_signedin.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Search for services by postcode</h1>
+
+    <p>We will use the postcode you enter to find services in that local authority area. The postcode must be in England.</p>
+    <!---<p>Enter a postcode to find nearby services.<p>--->
+    <!---<p>You can also search by what the family needs help with.</p>--->
+    <form method="post" novalidate data-validate="my-form-validation">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="postcode">
+          Enter a postcode
+        </label>
+        <!---<div class="govuk-hint">For example, SE1 4DH</div>--->
+        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" autocomplete="postal-code">
+      </div>
+<!--      <div class="govuk-form-group">-->
+<!--        <label class="govuk-label" for="width-20">-->
+<!--         What does the family need help with? (optional)-->
+<!--        </label>-->
+<!--        <div class="govuk-hint">For example, mental health.</div>-->
+<!--        <input class="govuk-input govuk-input&#45;&#45;width-20" id="width-20" name="what" type="text">-->
+<!--      </div>-->
+      <button class="govuk-button">
+        Search
+      </button>
+    </form>
+    <script type="application/json" id="my-form-validation">
+      {
+        "postcode": {
+          "presence": {
+            "message": "^You need to enter a postcode"
+          }
+        }
+      }
+    </script>
+  </div>
+
+
+</div>
+{% endblock %}
